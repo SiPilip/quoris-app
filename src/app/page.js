@@ -3,6 +3,7 @@ import Broadcast from '@/components/landingPage/broadcast';
 import Campaign from '@/components/landingPage/campaign';
 import GetStarted from '@/components/landingPage/getStarted';
 import Opportunity from '@/components/landingPage/opportunity';
+import OurPricing from '@/components/landingPage/ourPricing';
 
 export default function Home() {
   return (
@@ -12,13 +13,7 @@ export default function Home() {
       <Campaign />
       <AutoReply />
       <Opportunity />
-      {/* 
-      <section id="campaign">Campaign</section>
-      <section id="auto-reply">Auto Reply</section>
-      <section id="opportunity">Opportunity</section>
-      <section id="pricing">Pricing</section>
-      <section id="faq">FAQ</section>
-      <section id="contact-us">Contact Us</section> */}
+      <OurPricing />
     </main>
   );
 }

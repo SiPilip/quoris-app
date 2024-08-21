@@ -1,6 +1,3 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-
 'use client';
 
 import { useState } from 'react';
@@ -38,7 +35,7 @@ export default function Opportunity() {
   return (
     <section
       id="broadcast"
-      className="w-full flex h-screen justify-center bg-white"
+      className="w-full flex h-screen justify-center bg-[#FEFEFF]"
     >
       <div className="max-w-6xl h-screen flex flex-col justify-center ">
         <h1 className="text-primary text-center font-bold text-4xl">

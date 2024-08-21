@@ -3,7 +3,7 @@ import campaignImg from '@/../public/campaign-img.png';
 
 export default function Campaign() {
   return (
-    <section id="broadcast" className="w-full flex justify-center bg-white">
+    <section id="broadcast" className="w-full flex justify-center bg-[#FEFEFF]">
       <div className="grid-cols-3 grid max-w-6xl gap-10 h-screen place-content-center justify-items-center  ">
         <div className="flex flex-col justify-center gap-5">
           <h1 className="text-4xl font-bold">Right Time, Effective Messages</h1>
