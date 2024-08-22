@@ -50,22 +50,25 @@ export default function Opportunity() {
   return (
     <section
       id="opportunity"
-      className="w-full flex h-screen justify-center bg-[#FEFEFF]"
+      className="flex h-full w-full justify-center bg-[#FEFEFF] px-10 max-lg:py-10 md:h-screen"
       ref={ref}
     >
-      <div className="max-w-6xl h-screen flex flex-col justify-center ">
-        <h1 className="text-primary text-center font-bold text-4xl">
+      <div className="flex h-screen max-w-6xl flex-col justify-center">
+        <h1 className="text-center text-4xl font-bold text-primary">
           One Step Closer to More Effective and Connected Communication!
         </h1>
-        <div className="place-content-center justify-items-center grid grid-cols-3">
-          <Image src={opportunityImg} className="scale-75" />
-          <div className="flex flex-col justify-center items-start gap-5 col-span-2">
-            <ul className="flex flex-row gap-3">
+        <div className="grid grid-cols-3 place-content-center justify-items-center max-lg:grid-cols-1">
+          <Image
+            src={opportunityImg}
+            className="mx-auto scale-75 max-lg:w-4/5"
+          />
+          <div className="col-span-2 flex flex-col items-start justify-center gap-5">
+            <ul className="flex flex-row gap-3 max-lg:w-full max-lg:flex-col max-lg:text-center">
               {opportunity.map((item, index) => (
                 <li
                   key={`item-${index}`}
                   className={cn(
-                    `border-primary border-2 py-2 px-3 rounded-md text-primary font-medium cursor-pointer transisi`,
+                    `transisi cursor-pointer rounded-md border-2 border-primary px-3 py-2 font-medium text-primary`,
                     {
                       'bg-primary text-white':
                         item.title === opportunityCategories,

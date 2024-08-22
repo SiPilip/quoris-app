@@ -96,15 +96,15 @@ export default function OurPricing() {
   return (
     <section
       id="pricing"
-      className="w-full flex justify-center bg-[#FAFAFA]"
+      className="flex w-full justify-center bg-[#FAFAFA] px-10"
       ref={ref}
     >
-      <div className="max-w-6xl h-screen flex flex-col justify-center ">
-        <h1 className="text-center font-bold text-4xl mb-3">Our Pricing</h1>
-        <div className="rounded-full bg-white shadow-md flex flex-row justify-between p-1 select-none mb-3 w-fit mx-auto">
+      <div className="flex h-screen max-w-6xl flex-col justify-center max-lg:h-full max-lg:py-10">
+        <h1 className="mb-3 text-center text-4xl font-bold">Our Pricing</h1>
+        <div className="mx-auto mb-3 flex w-fit select-none flex-row justify-between rounded-full bg-white p-1 shadow-md">
           <div
             className={cn(
-              ' bg-white rounded-full px-8 py-2 text-black cursor-pointer',
+              'cursor-pointer rounded-full bg-white px-8 py-2 text-black',
               { 'bg-primary text-white': pricingDur === 0 },
             )}
             onClick={() => setPricingDur(0)}
@@ -113,7 +113,7 @@ export default function OurPricing() {
           </div>
           <div
             className={cn(
-              ' bg-white rounded-full px-8 py-2 text-black cursor-pointer',
+              'cursor-pointer rounded-full bg-white px-8 py-2 text-black',
               { 'bg-primary text-white': pricingDur === 1 },
             )}
             onClick={() => setPricingDur(1)}
@@ -121,14 +121,14 @@ export default function OurPricing() {
             Yearly
           </div>
         </div>
-        <p className="bg-neutral-200 py-2 px-5 text-primary rounded-md w-fit mx-auto mb-3">
+        <p className="mx-auto mb-3 w-fit rounded-md bg-neutral-200 px-5 py-2 text-primary">
           Hemat hingga 25% dengan paket tahunan
         </p>
-        <div className="place-content-center justify-items-center grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-4 place-content-center justify-items-center gap-2 max-lg:grid-cols-1 max-lg:gap-8">
           {pricing.map((item, index) => (
             <div
               className={cn(
-                'hover:bg-white transisi rounded-lg hover:shadow-lg px-5 py-3 flex flex-col justify-between gap-5',
+                'transisi flex flex-col justify-between gap-5 rounded-lg px-5 py-3 hover:bg-white hover:shadow-lg',
                 {
                   'bg-white': item.recommended === true,
                 },
@@ -137,10 +137,10 @@ export default function OurPricing() {
             >
               <div className="flex flex-col gap-3">
                 <h1 className="text-2xl font-bold">{item.name}</h1>
-                <p className="font-medium text-sm">{item.description}</p>
+                <p className="text-sm font-medium">{item.description}</p>
               </div>
               <div className="flex flex-col gap-2">
-                <h1 className="text-2xl font-bold flex flex-row items-end">
+                <h1 className="flex flex-row items-end text-2xl font-bold">
                   {item.price[pricingDur] === 0
                     ? 'Gratis'
                     : formatIDR(item.price[pricingDur])}
@@ -151,14 +151,14 @@ export default function OurPricing() {
                 {!item.recommended ? (
                   <button
                     type="button"
-                    className="bg-primary w-full py-2 text-white rounded-md my-5"
+                    className="my-5 w-full rounded-md bg-primary py-2 text-white"
                   >
                     Start Now
                   </button>
                 ) : (
                   <button
                     type="button"
-                    className="bg-[#FFB020] w-full py-2 text-white rounded-md my-5"
+                    className="my-5 w-full rounded-md bg-[#FFB020] py-2 text-white"
                   >
                     Get Started
                   </button>

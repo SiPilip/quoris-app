@@ -20,9 +20,13 @@ export default function AutoReply() {
   });
 
   return (
-    <section id="auto-reply" className="w-full flex justify-center" ref={ref}>
-      <div className="grid-cols-3 grid max-w-6xl gap-10 h-screen place-content-center justify-items-center  ">
-        <Image src={autoreplyImg} className="col-span-2 " />
+    <section
+      id="auto-reply"
+      className="flex w-full justify-center px-10"
+      ref={ref}
+    >
+      <div className="grid h-screen max-w-6xl grid-cols-3 place-content-center justify-items-center gap-10 max-lg:grid-cols-1">
+        <Image src={autoreplyImg} className="col-span-2 mx-auto max-lg:w-4/5" />
         <div className="flex flex-col justify-center gap-5">
           <h1 className="text-4xl font-bold">
             Respond Faster with the Convenience of Auto Reply

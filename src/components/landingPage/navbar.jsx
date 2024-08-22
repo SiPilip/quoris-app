@@ -47,13 +47,13 @@ const navs = [
 
 export default function Navbar() {
   return (
-    <div className="w-screen flex justify-center relative">
-      <nav className="bg-white rounded-md flex flex-row items-center justify-between w-fit mt-10 mx-auto gap-10 [box-shadow:0px_21px_50px_0px_#0000000A] fixed z-30 max-md:hidden">
+    <div className="relative flex w-screen justify-center">
+      <nav className="fixed z-30 mx-auto mt-10 flex w-fit flex-row items-center justify-between gap-10 rounded-md bg-white [box-shadow:0px_21px_50px_0px_#0000000A] max-md:hidden">
         <div className="ml-2">
           <Image src={forwardinLogo} />
         </div>
         <div>
-          <ul className="flex flex-row items-center text-black [&>*:first-child]:text-primary gap-8">
+          <ul className="flex flex-row items-center gap-8 text-black [&>*:first-child]:text-primary">
             {navs.map((item, index) => (
               <li key={`nav-item-${index}`}>
                 {!item.children ? (
@@ -62,7 +62,7 @@ export default function Navbar() {
                   <Menubar>
                     <MenubarMenu>
                       <MenubarTrigger className="-mx-4">
-                        <div className="flex flex-row items-center gap-1 text-base ">
+                        <div className="flex flex-row items-center gap-1 text-base">
                           <span>{item.title}</span>
                           <HiChevronDown />
                         </div>
@@ -83,35 +83,35 @@ export default function Navbar() {
         </div>
         <button
           type="button"
-          className="bg-primary h-full block py-3 px-10 m-2 text-white rounded-md hover:bg-third transisi"
+          className="transisi m-2 block h-full rounded-md bg-primary px-10 py-3 text-white hover:bg-third"
         >
           <span>Sign in</span>
         </button>
       </nav>
-      <nav className="hidden max-md:flex bg-white fixed top-0 left-0 w-screen justify-between px-10 py-5 z-30 shadow-lg">
+      <nav className="fixed left-0 top-0 z-30 hidden w-screen justify-between bg-white px-14 py-5 shadow-lg max-md:flex">
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1" className="w-full">
-            <div className="flex justify-between flex-row w-full">
-              <Image src={forwardinLogo} />
+            <div className="flex w-full flex-row justify-between">
+              <Image src={forwardinLogo} className="-ml-8" />
               <AccordionTrigger>
                 <HiOutlineMenu className="text-4xl text-primary" />
               </AccordionTrigger>
             </div>
             <AccordionContent>
-              <ul className="flex flex-col items-center text-black justify-center gap-7 font-semibold text-base">
+              <ul className="flex flex-col items-center justify-center gap-5 text-base font-semibold text-black">
                 {navs.map((item, index) => (
-                  <li key={`nav-item-${index}`} className="first:-mb-5 ">
+                  <li key={`nav-item-${index}`} className="first:-mb-5">
                     {!item.children ? (
                       <Link href={item?.link}>{item.title}</Link>
                     ) : (
                       <Accordion type="single" collapsible className="w-full">
                         <AccordionItem value="item-2" className="w-full">
-                          <AccordionTrigger className="flex flex-row items-center gap-1 text-base ">
+                          <AccordionTrigger className="flex flex-row items-center gap-1 text-base">
                             <span>{item.title}</span>
                             <HiChevronDown className="text-lg" />
                           </AccordionTrigger>
                           <AccordionContent>
-                            <div className="flex flex-col  items-center  gap-5 text-base font-medium">
+                            <div className="flex flex-col items-center gap-5 text-base font-medium">
                               {item.children.map((item2, index2) => (
                                 <Link
                                   href={item2.link}
@@ -127,13 +127,13 @@ export default function Navbar() {
                     )}
                   </li>
                 ))}
-                <li className="bg-primary w-full text-center text-white py-3 rounded-md hover:bg-third transisi">
+                <li className="transisi w-full rounded-md bg-primary py-3 text-center text-white hover:bg-third">
                   Sign in
                 </li>
-                <li className="bg-gray-50 w-full text-center text-black py-3 rounded-md hover:bg-gray-100 transisi">
+                <li className="transisi -mt-2 w-full rounded-md bg-gray-50 py-3 text-center text-black hover:bg-gray-100">
                   Sign in as admin
                 </li>
-                <li className="w-full text-center text-black py-3 rounded-md  transisi">
+                <li className="transisi -mt-2 w-full rounded-md py-3 text-center text-black">
                   Sign in as Customer Service
                 </li>
               </ul>

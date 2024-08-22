@@ -56,25 +56,25 @@ export default function Footer() {
 
   return (
     <footer
-      className="w-full h-full bg-cover bg-no-repeat"
+      className="h-full w-full bg-cover bg-no-repeat px-10"
       style={{ backgroundImage: `url(${elementFooter.src})` }}
     >
       <section
         id="faq"
-        className="w-full flex h-screen justify-center "
+        className="flex h-screen w-full justify-center"
         ref={ref1}
       >
-        <div className="max-w-6xl w-full items-center h-screen flex flex-col gap-10 justify-center">
-          <h1 className="text-4xl font-bold text-white">
+        <div className="flex h-screen w-full max-w-6xl flex-col items-center justify-center gap-10">
+          <h1 className="text-4xl font-bold text-white max-lg:text-center">
             Frequently Asked Questions
           </h1>
-          <div className="flex flex-row items-center max-w-2xl w-full">
-            <div className="bg-white p-2 rounded-md basis-11/12">
+          <div className="flex w-full max-w-2xl flex-row items-center">
+            <div className="basis-11/12 rounded-md bg-white p-2">
               <input type="text" className="border-none outline-none" />
             </div>
-            <HiSearch className="text-2xl basis-1/12 text-white" />
+            <HiSearch className="basis-1/12 text-2xl text-white" />
           </div>
-          <div className="flex flex-col w-full max-w-2xl">
+          <div className="flex w-full max-w-2xl flex-col">
             <Accordion
               type="single"
               collapsible
@@ -92,10 +92,10 @@ export default function Footer() {
       </section>
       <section
         id="contact-us"
-        className="w-full flex flex-col gap-24 h-screen justify-center items-center "
+        className="flex w-full flex-col items-center justify-center gap-24 py-10"
         ref={ref2}
       >
-        <div className="max-w-6xl flex flex-row justify-between w-full gap-16 text-white">
+        <div className="flex w-full max-w-6xl flex-row justify-between gap-16 text-white max-md:flex-col">
           <div className="flex flex-col gap-5">
             <Image src={forwardinLogo} />
             <p>
@@ -121,7 +121,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className="flex flex-col gap-5">
-            <h1 className="text-xl text-nowrap">Lets Talk</h1>
+            <h1 className="text-nowrap text-xl">Lets Talk</h1>
             <ul>
               <li>Facebook</li>
               <li>Instagram</li>
@@ -129,7 +129,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="flex flex-row gap-5 text-white items-center">
+        <div className="flex flex-row items-center gap-5 text-white">
           <h1 className="text-xl font-normal">Powered by</h1>
           <Image src={forwardinLogo} />
         </div>

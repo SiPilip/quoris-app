@@ -22,10 +22,10 @@ export default function Campaign() {
   return (
     <section
       id="campaign"
-      className="w-full flex justify-center bg-[#FEFEFF]"
+      className="flex w-full justify-center bg-[#FEFEFF] px-10"
       ref={ref}
     >
-      <div className="grid-cols-3 grid max-w-6xl gap-10 h-screen place-content-center justify-items-center  ">
+      <div className="grid h-screen max-w-6xl grid-cols-3 place-content-center justify-items-center gap-10 max-lg:grid-cols-1">
         <div className="flex flex-col justify-center gap-5">
           <h1 className="text-4xl font-bold">Right Time, Effective Messages</h1>
           <p className="font-medium">
@@ -35,7 +35,7 @@ export default function Campaign() {
             Fowardin, setiap pesan iklan memiliki dampak yang lebih besar.
           </p>
         </div>
-        <Image src={campaignImg} className="col-span-2 " />
+        <Image src={campaignImg} className="col-span-2 mx-auto max-lg:w-4/5" />
       </div>
     </section>
   );
