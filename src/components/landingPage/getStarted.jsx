@@ -13,7 +13,8 @@ export default function GetStarted() {
   const router = useRouter();
 
   const { ref } = useInView({
-    threshold: 0.5,
+    threshold: 0.8,
+    delay: 800,
     onChange: (inView) => {
       if (inView) {
         router.push('#get-started');
@@ -25,7 +26,7 @@ export default function GetStarted() {
     <section
       id="get-started"
       className="w-full flex justify-center bg-no-repeat"
-      style={{ backgroundImage: bgHero }}
+      style={{ backgroundImage: `url(${bgHero.src})` }}
       ref={ref}
     >
       <div className="grid-cols-2 grid max-w-6xl gap-28 h-screen place-content-center">

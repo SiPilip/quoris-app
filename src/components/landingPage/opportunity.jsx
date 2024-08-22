@@ -2,8 +2,11 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import opportunityImg from '@/../public/opportunity-img-1.png';
+import { useRouter } from 'next/navigation';
+import { useInView } from 'react-intersection-observer';
 import { cn } from '@/lib/utils';
+
+import opportunityImg from '@/../public/opportunity-img-1.png';
 
 const opportunity = [
   {
@@ -24,6 +27,18 @@ const opportunity = [
 ];
 
 export default function Opportunity() {
+  const router = useRouter();
+
+  const { ref } = useInView({
+    threshold: 0.8,
+    delay: 800,
+    onChange: (inView) => {
+      if (inView) {
+        router.push('#opportunity', { scroll: false });
+      }
+    },
+  });
+
   const [opportunityCategories, setOpportunityCategories] = useState(
     'Bisnis dan Pemasaran',
   );
@@ -36,6 +51,7 @@ export default function Opportunity() {
     <section
       id="opportunity"
       className="w-full flex h-screen justify-center bg-[#FEFEFF]"
+      ref={ref}
     >
       <div className="max-w-6xl h-screen flex flex-col justify-center ">
         <h1 className="text-primary text-center font-bold text-4xl">

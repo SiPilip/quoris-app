@@ -1,9 +1,26 @@
+'use client';
+
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import { useInView } from 'react-intersection-observer';
+
 import autoreplyImg from '@/../public/autoreply-img.png';
 
 export default function AutoReply() {
+  const router = useRouter();
+
+  const { ref } = useInView({
+    threshold: 0.8,
+    delay: 800,
+    onChange: (inView) => {
+      if (inView) {
+        router.push('#auto-reply');
+      }
+    },
+  });
+
   return (
-    <section id="auto-reply" className="w-full flex justify-center ">
+    <section id="auto-reply" className="w-full flex justify-center" ref={ref}>
       <div className="grid-cols-3 grid max-w-6xl gap-10 h-screen place-content-center justify-items-center  ">
         <Image src={autoreplyImg} className="col-span-2 " />
         <div className="flex flex-col justify-center gap-5">

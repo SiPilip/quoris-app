@@ -10,6 +10,8 @@ import {
   HiIdentification,
   HiSignal,
 } from 'react-icons/hi2';
+import { useRouter } from 'next/navigation';
+import { useInView } from 'react-intersection-observer';
 import { cn, formatIDR } from '@/lib/utils';
 
 const pricing = [
@@ -77,10 +79,26 @@ const pricing = [
 ];
 
 export default function OurPricing() {
+  const router = useRouter();
+
+  const { ref } = useInView({
+    threshold: 0.8,
+    delay: 800,
+    onChange: (inView) => {
+      if (inView) {
+        router.push('#pricing', { scroll: false });
+      }
+    },
+  });
+
   const [pricingDur, setPricingDur] = useState(0);
 
   return (
-    <section id="pricing" className="w-full flex justify-center bg-[#FEFEFF]">
+    <section
+      id="pricing"
+      className="w-full flex justify-center bg-[#FAFAFA]"
+      ref={ref}
+    >
       <div className="max-w-6xl h-screen flex flex-col justify-center ">
         <h1 className="text-center font-bold text-4xl mb-3">Our Pricing</h1>
         <div className="rounded-full bg-white shadow-md flex flex-row justify-between p-1 select-none mb-3 w-fit mx-auto">
@@ -109,7 +127,12 @@ export default function OurPricing() {
         <div className="place-content-center justify-items-center grid grid-cols-4 gap-2">
           {pricing.map((item, index) => (
             <div
-              className="hover:bg-white transisi rounded-lg hover:shadow-lg px-5 py-3 flex flex-col justify-between gap-5"
+              className={cn(
+                'hover:bg-white transisi rounded-lg hover:shadow-lg px-5 py-3 flex flex-col justify-between gap-5',
+                {
+                  'bg-white': item.recommended === true,
+                },
+              )}
               key={`item-${index}`}
             >
               <div className="flex flex-col gap-3">

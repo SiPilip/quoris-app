@@ -10,7 +10,8 @@ export default function Campaign() {
   const router = useRouter();
 
   const { ref } = useInView({
-    threshold: 0.5,
+    threshold: 0.8,
+    delay: 800,
     onChange: (inView) => {
       if (inView) {
         router.push('#campaign');
