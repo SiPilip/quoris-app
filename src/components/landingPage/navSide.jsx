@@ -57,6 +57,9 @@ export default function NavSide() {
             key={`item-${index}`}
             className={cn('border-l-2 pl-2 py-1', {
               'border-black': item.id === sectionHash,
+              'text-white':
+                window.location.hash === '#contact-us' ||
+                window.location.hash === '#faq',
             })}
           >
             {item.title}
