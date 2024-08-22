@@ -1,6 +1,6 @@
 import { Inter, Lexend_Deca as lexendDeca } from 'next/font/google';
 import './globals.css';
-import Navbar from '@/components/navbar';
+import Navbar from '@/components/landingPage/navbar';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const lexend = lexendDeca({

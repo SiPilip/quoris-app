@@ -8,13 +8,13 @@ import {
   MenubarMenu,
   MenubarTrigger,
 } from '@/components/ui/menubar';
-import forwardinLogo from '../../public/logo-forwardin.svg';
+import forwardinLogo from '@/../public/logo-forwardin.svg';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from './ui/accordion2';
+} from '../ui/accordion2';
 
 const navs = [
   {
@@ -88,7 +88,7 @@ export default function Navbar() {
           <span>Sign in</span>
         </button>
       </nav>
-      <nav className="hidden max-md:flex bg-white fixed top-0 left-0 w-screen justify-between px-10 py-5 z-30">
+      <nav className="hidden max-md:flex bg-white fixed top-0 left-0 w-screen justify-between px-10 py-5 z-30 shadow-lg">
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1" className="w-full">
             <div className="flex justify-between flex-row w-full">
