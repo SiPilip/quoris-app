@@ -80,7 +80,7 @@ export default function OurPricing() {
   const [pricingDur, setPricingDur] = useState(0);
 
   return (
-    <section id="broadcast" className="w-full flex justify-center bg-[#FEFEFF]">
+    <section id="pricing" className="w-full flex justify-center bg-[#FEFEFF]">
       <div className="max-w-6xl h-screen flex flex-col justify-center ">
         <h1 className="text-center font-bold text-4xl mb-3">Our Pricing</h1>
         <div className="rounded-full bg-white shadow-md flex flex-row justify-between p-1 select-none mb-3 w-fit mx-auto">

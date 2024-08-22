@@ -1,9 +1,29 @@
+'use client';
+
 import Image from 'next/image';
+import { useInView } from 'react-intersection-observer';
+import { useRouter } from 'next/navigation';
+
 import campaignImg from '@/../public/campaign-img.png';
 
 export default function Campaign() {
+  const router = useRouter();
+
+  const { ref } = useInView({
+    threshold: 0.5,
+    onChange: (inView) => {
+      if (inView) {
+        router.push('#campaign');
+      }
+    },
+  });
+
   return (
-    <section id="broadcast" className="w-full flex justify-center bg-[#FEFEFF]">
+    <section
+      id="campaign"
+      className="w-full flex justify-center bg-[#FEFEFF]"
+      ref={ref}
+    >
       <div className="grid-cols-3 grid max-w-6xl gap-10 h-screen place-content-center justify-items-center  ">
         <div className="flex flex-col justify-center gap-5">
           <h1 className="text-4xl font-bold">Right Time, Effective Messages</h1>

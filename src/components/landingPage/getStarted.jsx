@@ -1,15 +1,32 @@
+'use client';
+
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { HiArrowSmallRight } from 'react-icons/hi2';
+import { useInView } from 'react-intersection-observer';
+
 import imgHero1 from '@/../public/hero-img-1.png';
 import imgHero2 from '@/../public/hero-img-2.png';
 import bgHero from '@/../public/main-hero-bg.png';
 
 export default function GetStarted() {
+  const router = useRouter();
+
+  const { ref } = useInView({
+    threshold: 0.5,
+    onChange: (inView) => {
+      if (inView) {
+        router.push('#get-started');
+      }
+    },
+  });
+
   return (
     <section
       id="get-started"
-      style={{ backgroundImage: `url(${bgHero.src})` }}
       className="w-full flex justify-center bg-no-repeat"
+      style={{ backgroundImage: bgHero }}
+      ref={ref}
     >
       <div className="grid-cols-2 grid max-w-6xl gap-28 h-screen place-content-center">
         <div className="flex flex-col gap-5">

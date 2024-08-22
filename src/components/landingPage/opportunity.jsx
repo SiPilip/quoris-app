@@ -34,7 +34,7 @@ export default function Opportunity() {
 
   return (
     <section
-      id="broadcast"
+      id="opportunity"
       className="w-full flex h-screen justify-center bg-[#FEFEFF]"
     >
       <div className="max-w-6xl h-screen flex flex-col justify-center ">

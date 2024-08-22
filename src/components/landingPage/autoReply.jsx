@@ -3,7 +3,7 @@ import autoreplyImg from '@/../public/autoreply-img.png';
 
 export default function AutoReply() {
   return (
-    <section id="broadcast" className="w-full flex justify-center ">
+    <section id="auto-reply" className="w-full flex justify-center ">
       <div className="grid-cols-3 grid max-w-6xl gap-10 h-screen place-content-center justify-items-center  ">
         <Image src={autoreplyImg} className="col-span-2 " />
         <div className="flex flex-col justify-center gap-5">
