@@ -51,7 +51,7 @@ export default function NavSide() {
   }, [params]);
 
   return (
-    <div className="fixed z-30 left-14 top-1/2 transform -translate-y-1/2">
+    <div className="fixed z-30 left-14 top-1/2 transform -translate-y-1/2 max-2xl:hidden">
       <ul className="flex flex-col">
         {section.map((item, index) => (
           <Link
