@@ -45,7 +45,9 @@ export default function NavSide() {
   const [sectionHash, setSectionHash] = useState('');
 
   useEffect(() => {
-    setSectionHash(window.location.hash.replace('#', ''));
+    if (typeof window !== 'undefined') {
+      setSectionHash(window.location.hash.replace('#', ''));
+    }
   }, [params]);
 
   return (
@@ -58,8 +60,9 @@ export default function NavSide() {
             className={cn('border-l-2 pl-2 py-1', {
               'border-black': item.id === sectionHash,
               'text-white':
-                window.location.hash === '#contact-us' ||
-                window.location.hash === '#faq',
+                typeof window !== 'undefined' &&
+                (window.location.hash === '#contact-us' ||
+                  window.location.hash === '#faq'),
             })}
           >
             {item.title}

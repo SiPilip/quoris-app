@@ -2,6 +2,8 @@
 
 import { HiSearch } from 'react-icons/hi';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import { useInView } from 'react-intersection-observer';
 import {
   Accordion,
   AccordionContent,
@@ -31,12 +33,37 @@ const faq = [
 ];
 
 export default function Footer() {
+  const router = useRouter();
+
+  const { ref: ref1 } = useInView({
+    threshold: 0.8,
+    delay: 800,
+    onChange: (inView) => {
+      if (inView) {
+        router.push('#faq', { scroll: false });
+      }
+    },
+  });
+  const { ref: ref2 } = useInView({
+    threshold: 0.8,
+    delay: 800,
+    onChange: (inView) => {
+      if (inView) {
+        router.push('#contact-us', { scroll: false });
+      }
+    },
+  });
+
   return (
     <footer
       className="w-full h-full bg-cover bg-no-repeat"
       style={{ backgroundImage: `url(${elementFooter.src})` }}
     >
-      <section id="faq" className="w-full flex h-screen justify-center ">
+      <section
+        id="faq"
+        className="w-full flex h-screen justify-center "
+        ref={ref1}
+      >
         <div className="max-w-6xl w-full items-center h-screen flex flex-col gap-10 justify-center">
           <h1 className="text-4xl font-bold text-white">
             Frequently Asked Questions
@@ -66,6 +93,7 @@ export default function Footer() {
       <section
         id="contact-us"
         className="w-full flex flex-col gap-24 h-screen justify-center items-center "
+        ref={ref2}
       >
         <div className="max-w-6xl flex flex-row justify-between w-full gap-16 text-white">
           <div className="flex flex-col gap-5">
