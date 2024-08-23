@@ -24,11 +24,11 @@ export default function GetStarted() {
   return (
     <section
       id="get-started"
-      className="w-full h-full flex justify-center bg-no-repeat max-xl:px-10"
+      className="flex h-full w-full justify-center bg-no-repeat max-xl:px-10"
       style={{ backgroundImage: `url(${bgHero.src})` }}
       ref={ref}
     >
-      <div className="grid-cols-2 grid max-w-6xl gap-28 max-lg:gap-5 h-screen place-content-center place-items-center w-full max-lg:grid-cols-1 max-lg:mt-10 ">
+      <div className="grid h-screen w-full max-w-6xl grid-cols-2 place-content-center place-items-center gap-28 max-lg:mt-10 max-lg:grid-cols-1 max-lg:gap-5">
         <Image src={imgHero1} className="mx-auto" />
         <div className="flex flex-col gap-5">
           <h1 className="text-4xl font-bold leading-10">
@@ -43,10 +43,10 @@ export default function GetStarted() {
           </p>
           <button
             type="button"
-            className="bg-neutral-950 transisi hover:translate-x-1 text-white px-5 rounded w-fit flex flex-row gap-5 items-center"
+            className="transisi flex w-fit flex-row items-center gap-5 rounded bg-neutral-950 px-5 text-white hover:translate-x-1"
           >
-            <span className="py-3 border-r pr-5">Daftar Sekarang</span>
-            <HiArrowSmallRight className="text-2xl -mx-2" />
+            <span className="border-r py-3 pr-5">Daftar Sekarang</span>
+            <HiArrowSmallRight className="-mx-2 text-2xl" />
           </button>
         </div>
       </div>

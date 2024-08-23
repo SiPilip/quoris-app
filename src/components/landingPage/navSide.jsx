@@ -51,13 +51,13 @@ export default function NavSide() {
   }, [params]);
 
   return (
-    <div className="fixed z-30 left-14 top-1/2 transform -translate-y-1/2 max-2xl:hidden">
+    <div className="fixed left-14 top-1/2 z-30 -translate-y-1/2 transform max-2xl:hidden">
       <ul className="flex flex-col">
         {section.map((item, index) => (
           <Link
             href={`#${item.id}`}
             key={`item-${index}`}
-            className={cn('border-l-2 pl-2 py-1', {
+            className={cn('border-l-2 py-1 pl-2', {
               'border-black': item.id === sectionHash,
               'text-white':
                 typeof window !== 'undefined' &&
