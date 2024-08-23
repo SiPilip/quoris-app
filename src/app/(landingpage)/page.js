@@ -9,7 +9,7 @@ import OurPricing from '@/components/landingPage/ourPricing';
 
 export default function Home() {
   return (
-    <main className="flex flex-col justify-center relative ">
+    <main className="relative flex flex-col justify-center">
       <NavSide />
       <GetStarted />
       <Broadcast />

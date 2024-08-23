@@ -81,12 +81,13 @@ export default function Navbar() {
             ))}
           </ul>
         </div>
-        <button
+        <Link
           type="button"
+          href="/signin"
           className="transisi m-2 block h-full rounded-md bg-primary px-10 py-3 text-white hover:bg-third"
         >
           <span>Sign in</span>
-        </button>
+        </Link>
       </nav>
       <nav className="fixed left-0 top-0 z-30 hidden w-screen justify-between bg-white px-14 py-5 shadow-lg max-md:flex">
         <Accordion type="single" collapsible className="w-full">
@@ -127,9 +128,12 @@ export default function Navbar() {
                     )}
                   </li>
                 ))}
-                <li className="transisi w-full rounded-md bg-primary py-3 text-center text-white hover:bg-third">
+                <Link
+                  href="/signin"
+                  className="transisi w-full rounded-md bg-primary py-3 text-center text-white hover:bg-third"
+                >
                   Sign in
-                </li>
+                </Link>
                 <li className="transisi -mt-2 w-full rounded-md bg-gray-50 py-3 text-center text-black hover:bg-gray-100">
                   Sign in as admin
                 </li>
