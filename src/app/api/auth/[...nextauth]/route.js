@@ -25,6 +25,9 @@ const authOptions = {
         try {
           await connectMongoDB();
           const user = await User.findOne({ $or: [{ email }, { username }] });
+
+          console.log(user);
+
           if (!user) {
             return null;
           }
@@ -32,7 +35,9 @@ const authOptions = {
           if (!passwordMatch) {
             return null;
           }
-          return user;
+
+          // Return user object with username
+          return { id: user._id, email: user.email, username: user.username };
         } catch (error) {
           console.error(error);
         }
@@ -45,6 +50,20 @@ const authOptions = {
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
     signIn: '/signin',
+  },
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.username = user.username;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      if (token) {
+        session.user.username = token.username;
+      }
+      return session;
+    },
   },
 };
 

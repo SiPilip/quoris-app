@@ -9,6 +9,7 @@ export async function POST(req) {
     const { email } = await req.json();
 
     const user = await User.findOne({ email }).select('_id');
+
     return NextResponse.json({ user });
   } catch (error) {
     console.error(error);

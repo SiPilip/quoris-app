@@ -1,7 +1,12 @@
+'use client';
+
 import { HiBell, HiCog6Tooth, HiMiniUser } from 'react-icons/hi2';
 import Link from 'next/link';
+import { useSession } from 'next-auth/react';
 
 export default function Header() {
+  const { data: session } = useSession();
+
   return (
     <div className="flex w-full justify-end">
       <div className="mt-5 flex flex-row gap-3">
@@ -12,7 +17,9 @@ export default function Header() {
           <HiBell className="m-3 w-full text-2xl" />
         </Link>
         <div className="flex items-center rounded-full bg-white p-1 font-medium">
-          <p className="mx-10">username</p>
+          <p className="mx-10">
+            {session?.user?.username || session?.user?.email}
+          </p>
           <div className="flex items-center justify-center rounded-full bg-primary">
             <HiMiniUser className="m-2 text-2xl text-white" />
           </div>

@@ -1,6 +1,11 @@
+'use client';
+
+import { useSession } from 'next-auth/react';
 import { HiCalendar } from 'react-icons/hi';
 
 export default function DashboardHeader() {
+  const { data: session } = useSession();
+
   const getGreeting = () => {
     const hour = new Date().getHours();
     if (hour < 11) return 'pagi';
@@ -11,7 +16,10 @@ export default function DashboardHeader() {
 
   return (
     <div className="mt-10 flex flex-row justify-between">
-      <h1 className="text-2xl font-bold">Selamat {getGreeting()}, username</h1>
+      <h1 className="text-2xl font-bold">
+        Selamat {getGreeting()},{' '}
+        {session?.user?.username || session?.user?.email}
+      </h1>
       <div className="flex flex-row items-center gap-2">
         <div className="flex flex-col items-end">
           <p className="font-medium text-gray-400">Tanggal hari ini</p>
