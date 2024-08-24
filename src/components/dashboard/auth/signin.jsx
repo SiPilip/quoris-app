@@ -28,7 +28,7 @@ export default function Signin() {
         return;
       }
 
-      router.replace('/dashboard');
+      router.push('/dashboard');
     } catch (error) {
       console.error(error);
     }
