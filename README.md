@@ -6,9 +6,9 @@ Test Case Front-End Engineer MSIB Batch 7 ADS Digital Partner
 
 ####
 
-4. isi file .env
-   MONGODB_URI = mongodb+srv://philifs:JDwlsaM9X2NPO2zo@cluster0.wygic.mongodb.net/user
-   NEXTAUTH_SECRET=ajsgklasglkajsgaklsjg
+4. isi file .env\
+   MONGODB_URI = mongodb+srv://philifs:JDwlsaM9X2NPO2zo@cluster0.wygic.mongodb.net/user\
+   NEXTAUTH_SECRET=ajsgklasglkajsgaklsjg\
    NEXTAUTH_URL=http://localhost:3000/
 
 ####
