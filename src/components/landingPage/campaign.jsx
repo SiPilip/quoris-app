@@ -27,8 +27,10 @@ export default function Campaign() {
     >
       <div className="grid h-screen max-w-6xl grid-cols-3 place-content-center justify-items-center gap-10 max-lg:grid-cols-1">
         <div className="flex flex-col justify-center gap-5">
-          <h1 className="text-4xl font-bold">Right Time, Effective Messages</h1>
-          <p className="font-medium">
+          <h1 className="text-4xl font-bold max-md:text-3xl">
+            Right Time, Effective Messages
+          </h1>
+          <p className="font-medium max-md:text-sm">
             Fowardin memungkinkan Anda untuk merencanakan pengiriman iklan yang
             tepat sasaran. Manfaatkan fitur Campaign kami untuk mengoptimalkan
             pesan iklan Anda sehingga hasilnya lebih akurat dan sukses. Dengan

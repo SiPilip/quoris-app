@@ -24,17 +24,17 @@ export default function GetStarted() {
   return (
     <section
       id="get-started"
-      className="flex h-full w-full justify-center bg-no-repeat max-xl:px-10"
+      className="flex h-full w-full justify-center bg-no-repeat max-xl:px-10 max-sm:pt-20"
       style={{ backgroundImage: `url(${bgHero.src})` }}
       ref={ref}
     >
       <div className="grid h-screen w-full max-w-6xl grid-cols-2 place-content-center place-items-center gap-28 max-lg:mt-10 max-lg:grid-cols-1 max-lg:gap-5">
         <Image src={imgHero1} className="mx-auto" />
         <div className="flex flex-col gap-5">
-          <h1 className="text-4xl font-bold leading-10">
+          <h1 className="text-4xl font-bold leading-10 max-md:text-3xl">
             Elevate Your Messaging Efficiency with Our Innovative Admin Tools
           </h1>
-          <p className="font-medium">
+          <p className="font-medium max-md:text-sm">
             Selamat datang di Fowardin! Pengelolaan pesan Anda menjadi lebih
             mudah dengan Admin Tools kami. Tingkatkan komunikasi Anda dan
             pelanggan dengan fitur pesan otomatis. Menyimpan kontak menjadi

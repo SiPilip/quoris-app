@@ -54,7 +54,7 @@ export default function Opportunity() {
       ref={ref}
     >
       <div className="flex h-screen max-w-6xl flex-col justify-center">
-        <h1 className="text-center text-4xl font-bold text-primary">
+        <h1 className="text-center text-4xl font-bold text-primary max-md:text-3xl">
           One Step Closer to More Effective and Connected Communication!
         </h1>
         <div className="grid grid-cols-3 place-content-center justify-items-center max-lg:grid-cols-1">

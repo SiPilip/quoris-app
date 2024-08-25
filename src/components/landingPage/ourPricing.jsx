@@ -100,7 +100,9 @@ export default function OurPricing() {
       ref={ref}
     >
       <div className="flex h-screen max-w-6xl flex-col justify-center max-lg:h-full max-lg:py-10">
-        <h1 className="mb-3 text-center text-4xl font-bold">Our Pricing</h1>
+        <h1 className="mb-3 text-center text-4xl font-bold max-md:text-3xl">
+          Our Pricing
+        </h1>
         <div className="mx-auto mb-3 flex w-fit select-none flex-row justify-between rounded-full bg-white p-1 shadow-md">
           <div
             className={cn(

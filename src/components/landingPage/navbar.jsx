@@ -89,11 +89,11 @@ export default function Navbar() {
           <span>Sign in</span>
         </Link>
       </nav>
-      <nav className="fixed left-0 top-0 z-30 hidden w-screen justify-between bg-white px-14 py-5 shadow-lg max-md:flex">
+      <nav className="fixed left-0 top-0 z-30 hidden w-screen justify-between bg-white px-10 py-3 shadow-lg max-md:flex">
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1" className="w-full">
             <div className="flex w-full flex-row justify-between">
-              <Image src={forwardinLogo} className="-ml-8" />
+              <Image src={forwardinLogo} className="-ml-4" />
               <AccordionTrigger>
                 <HiOutlineMenu className="text-4xl text-primary" />
               </AccordionTrigger>

@@ -28,8 +28,10 @@ export default function Broadcast() {
       <div className="grid h-screen max-w-6xl grid-cols-3 place-content-center gap-10 max-lg:grid-cols-1">
         <Image src={broadcastImg} className="col-span-2 mx-auto max-lg:w-4/5" />
         <div className="flex flex-col justify-center gap-5">
-          <h1 className="text-4xl font-bold">Reach Further with Ease</h1>
-          <p className="font-medium">
+          <h1 className="text-4xl font-bold max-md:text-3xl">
+            Reach Further with Ease
+          </h1>
+          <p className="font-medium max-md:text-sm">
             Fowardin memberikan Anda akses cepat untuk memperluas jangkauan
             komunikasi Anda. Dengan fitur Broadcast kami, Anda dapat mengirim
             pesan kepada banyak kontak dan grup sekaligus. Menjangkau audiens
